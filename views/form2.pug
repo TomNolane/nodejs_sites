@@ -1,0 +1,111 @@
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="passport") Серия и номер паспорта
+    .col-md-6
+        .ex-wrapper
+            input#passport.form-control.ec.tip(type="tel" name="passport" placeholder="Номер и серия паспорта" title="Укажите серию и номер паспорта" data-validation="custom" data-validation-regexp="^([0-9]{4}\\s[0-9]{6})+$" data-validation-error-msg="Укажите номер и серию паспорта" required="")
+            span#passportstatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите номер и серию паспорта
+            p.text-muted.text-right Пример: 4510 123456
+input#passport-s.form-control.ec(type="hidden" name="passport_s" title="Серия паспорта" data-validation="number" data-validation-allowing="range[1;9999]" data-validation-error-msg="Укажите серию паспорта")
+input#passport-n.form-control.ec(type="hidden" name="passport_n" title="Номер паспорта" data-validation="number" data-validation-allowing="range[1;999999]" data-validation-error-msg="Укажите номер паспорта")
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="passportdate") Дата выдачи
+    .col-md-6
+        .ex-wrapper
+            input#passportdate.form-control.ec.tip(type="text" name="passportdate" placeholder="Дата выдачи паспорта" title="Пожалуйста, выберете дату выдачи паспорта" data-validation="custom" data-validation-regexp="^[0-9]{2}\\/[0-9]{2}\\/[0-9]{4}$" data-validation-error-msg="Пожалуйста, выберите дату выдачи паспорта" required="")
+            span#passportdazaimhomeatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите дату выдачи паспорта
+            p.text-muted.text-right Пример: 24/03/2016
+.form-group.has-feedback
+    label.control-label.label-required.col-md-4(for="passport_code") Код подразделения
+    .col-md-6
+        .ex-wrapper
+            input#passport_code.form-control.ec.tip(type="tel" name="passport_code" placeholder="Код подразделения" title="Укажите код подразделения" data-validation="custom" data-validation-regexp="^([0-9]{3}-[0-9]{3})$" data-validation-error-msg="Укажите код подразделения" required="")
+            span#passport_codestatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите код подразделения
+            p.text-muted.text-right Пример: 770-098
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="passport_who") Кем выдан паспорт
+    .col-md-6
+        .ex-wrapper
+            input#passport_who.form-control.ec.tip(type="text" name="passport_who" placeholder="Кем выдан паспорт" title="Укажите кем выдан паспорт" data-sanitize="capitalize" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\\-\\.\\№\\(\\)\\s\\d]+$" data-validation-error-msg="Укажите кем выдан паспорт" required="")
+            span#passport_whostatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите кем выдан паспорт
+            p.text-muted.text-right Пример: ОТДЕЛЕНИЕ УФМС РОССИИ ПО ГОР. МОСКВЕ ПО РАЙОНУ ЩУКИНО
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="birthplace") Место рождения
+    .col-md-6
+        .ex-wrapper
+            input#birthplace.form-control.ec.tip(type="text" name="birthplace" placeholder="Место рождения" title="Пожалуйста, ваше место рождения" data-sanitize="capitalize" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\\d\\s\\-\\,\\#\\.\\+\\(\\)]+$" data-validation-error-msg="Укажите место рождения" required="")
+            span#birthplacestatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите место своего рождения
+            p.text-muted.text-right Пример: г. Новосибирск, Новосибирского района
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="region") Регион проживания
+    .col-md-6
+      select#region.form-control.ec.tip(name="region" autocomplete="off" required="")
+        option(value="") -- Выберите регион --
+.form-group.has-feedback
+    br
+    label.control-label.col-md-4.label-required(for="city") Город проживания
+    .col-md-6
+        .ex-wrapper
+            input#city.form-control.ec.tip(type="text" name="city" placeholder="Населённый пункт" title="Укажите город в котором вы живете" value="" pattern="^[А-Яа-яЁё\\-\\.\\(\\)\\s]+$" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\\-\\.\\(\\)\\s]+$" data-validation-error-msg="Укажите город своего проживания")
+            span#citystatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите город своего проживания
+            p.text-muted.text-right Пример: г. Новосибирск
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="street") Улица проживания
+    .col-md-6
+        .ex-wrapper
+            input#street.form-control.ec.tip(type="text" name="street" placeholder="Улица" title="Укажите название улицы" data-sanitize="capitalize" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\\d\\s\\-\\,\\#\\.\\+\\(\\)]+$" data-validation-error-msg="Укажите улицу" required="")
+            span#streetstatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите улицу своего проживания
+            p.text-muted.text-right Пример: ул. Ленина
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="building") Номер дома
+    .col-md-6
+        .ex-wrapper
+            input#building.form-control.ec.tip(type="text" name="building" placeholder="Номер дома" title="Укажите номер дома" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё0-9\\-\\.\\(\\)\\s]+$" data-validation-error-msg="Укажите номер дома" required="")
+            span#buildingstatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите № дома своего проживания
+            p.text-muted.text-right Пример: 14
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="housing") Строение (корпус)
+    .col-md-6
+        .ex-wrapper
+            input#housing.form-control.ec.tip(type="text" name="housing" placeholder="Строение (корпус)" title="Укажите номер корпуса или строения" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё0-9\\-\\.\\(\\)\\s]+$" data-validation-error-msg="Укажите строение (корпус)" data-validation-optional="true")
+            span#housingstatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите строение\\корпус (не обязательно)
+            p.text-muted.text-right Пример: 1а
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="flat") Квартира
+    .col-md-6
+        .ex-wrapper
+            input#flat.form-control.ec.tip(type="text" name="flat" placeholder="Квартира" title="Укажите номер квартиры" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё0-9\\-\\.\\(\\)\\s]+$" data-validation-error-msg="Укажите номер квартиры" data-validation-optional="true")
+            span#flatstatus.glyphicon.form-control-feedback(aria-hidden="true")
+            p.help-block2 Укажите номер вашей квартиры
+            p.text-muted.text-right Пример: 38
+.form-group.has-feedback
+    label.control-label.col-md-4.label-required(for="reg_type") Тип регистрации
+    .col-md-6
+        select#reg_type.form-control.ec(size="1" name="reg_type")
+            option(selected="" value="1") Постоянная регистрация
+            option(value="0") Без регистрации
+            option(value="2") Временная регистрация
+fieldset#reg_same.hidden
+    .form-group
+    label.col-sm-7.control-label.label-required
+        b Регистрация совпадает с местом жительства
+    .col-sm-3
+        .pull-right
+        label.radio-inline
+            input.reg_same.ec(type="radio" name="reg_same" value="1" required="" checked="checked")
+            |  Да
+        label.radio-inline
+            input.reg_same.ec(type="radio" name="reg_same" value="0" required="")
+            |  Нет
+    .clearfix
+.form-group
+    .col-md-12.text-center
+        button#next2.ex-main-btn(type="button")  Далее 

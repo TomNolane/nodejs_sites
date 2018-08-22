@@ -1,0 +1,75 @@
+extends layout
+
+block content
+  .ex-home-bg
+  .container
+    .row
+      #ex-counter-block.col-xs-12
+        .row
+          .col-xs-12
+            .ex-calc-wrapper
+              .row
+                .col-md-7
+                  .ex-range-scope
+                    form#anketa(action='/form', method='post')
+                      h2 Какую сумму займа вы хотите получить?
+                      #ex-main-slider-range
+                        figure.ex-range-slider
+                          p#ex-slider-val
+                          i
+                          input#rangeSlider(type='text', name='rangeSlider')
+                          input#amount(type='hidden', name='amount', value='20000')
+                          input#period(type='hidden', name='period', value='21')
+                          input#form_slrd(type='hidden', name='form_slrd', value='15')
+                          input#fingerprint(type='hidden', name='fingerprint', value='')
+                          input#ip(type='hidden', name='ip', value='178.19.251.137')
+                          input(type='hidden', name='referer', value='')
+                        .ex-slider-info
+                          span 1 тыс.
+                          span 100 тыс.
+                      button.btn.btn-primary(type='submit') получить деньги
+                .col-md-5
+                  .ex-info-about-borrow
+                    .ex-table-wrapper
+                      table.table
+                        tbody
+                          tr
+                            td Сумма займа
+                            td.ex-current-val
+                          tr
+                            td Срок займа
+                            td.ex-time
+                          tr
+                            td Комиссия
+                            td.ex-Commission
+                          tr
+                            td Возврату
+                            td.ex-total
+                    p
+                      | Вероятность одобрения
+                      strong.ex-probability
+  h2.text-center.ex-money-receive-title Как получить деньги
+  #ex-how-receive.row
+    .col-md-4.col-md-offset-0.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.text-center
+      div
+        a(href='#', onclick='goToUp(); return false;', style='text-decoration: none;')
+          i.ex-notebook-icon
+          span Выберите нужную сумму
+      p
+        | После выбора суммы доступна информация о сроке займа, комиссии, вероятности одобрения
+    .col-md-4.col-md-offset-0.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.text-center
+      div
+        a(href='#', onclick='goToForm(); return false;', style='text-decoration: none;')
+          i.ex-signature-icon
+          span Заполните заявку
+      p Вносите актуальные данные в анкету, это повысит вероятность выдачи займа
+    .col-md-4.col-md-offset-0.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.text-center
+      div
+        a(href='#', onclick='goToReceiveMoney(); return false;', style='text-decoration: none;')
+          i.ex-card-icon
+          span Получите деньги
+      p Перевод поступает любым удобным способом.
+
+block append foot
+  //script(src='/javascripts/for_index.js')
+  script(src='/javascripts/index.js')

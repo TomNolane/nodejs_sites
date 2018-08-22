@@ -1,0 +1,115 @@
+extends layout
+
+block content
+  #ex-faq.container.ex-pd-and-h1-mb
+    h1.text-center Вопрос - ответ
+    .row
+      .col-md-8.col-md-offset-2
+        main#accordion.panel-group(role='tablist', aria-multiselectable='true')
+          .panel.panel-default
+            #headingOne.panel-heading(role='tab')
+              h4.panel-title
+                a(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                  | Я прошёл регистрацию. Как получить заём?
+                i.ex-minus-icon
+            #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+              .panel-body
+                | Чтобы подать новую заявку на займ выберите желаемую сумму и срок. Затем заполните анкету и получите деньги.
+          .panel.panel-default
+            #headingTwo.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                  | Почему моя заявка отклонена? Как я могу подать заявку снова?
+                i.ex-plus-icon
+            #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+              .panel-body
+                | Ваша заявка обрабатывается полностью автоматизированной системой, учитывающей большой спектр данных. К сожалению, мы не можем ответить на вопрос, по какой именно причине система вынесла отрицательное решение. Тем не менее, если Вы уже брали займ в Zaimhome ранее у Вас есть возможность подать заявку снова через 3 дня, а новых клиентов мы ждем через 7 дней.
+          .panel.panel-default
+            #headingThree.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                  | Сколько времени рассматривается заявка на займ?
+                i.ex-plus-icon
+            #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+              .panel-body
+                | Для того, чтобы получить заем, Вам необходимо заполнить анкету на сайте и дождаться звонка менеджера, после чего получить деньги любым удобным вам способом.
+          .panel.panel-default
+            #headingFour.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+                  | Я погасил займ. Когда я смогу подать заявку на займ снова?
+                i.ex-plus-icon
+            #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
+              .panel-body
+                | Чтобы подать новую заявку на займ, пройдите в ваш Личный кабинет, выберите желаемую сумму и оформите заявку.
+          .panel.panel-default
+            #headingFive.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFive', aria-expanded='false', aria-controls='collapseFive')
+                  | Сколько я могу получить и на какой срок?
+                i.ex-plus-icon
+            #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
+              .panel-body
+                | Минимальная сумма займа 1000 рублей, максимальная сумма 100000 рублей. Минимальный срок займа 61 день, максимальный срок 365 дней.
+          .panel.panel-default
+            #headingSix.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseSix', aria-expanded='false', aria-controls='collapseSix')
+                  | Как долго ждать перевода на карту/счет?
+                i.ex-plus-icon
+            #collapseSix.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSix')
+              .panel-body
+                | Компания, предоставляющая займ производит выплату средств в течение 15 минут после принятия решения по займу на Вашу банковскую карту или счет. Однако, все банки обрабатывают переводы с различной скоростью. В зависимости от специфики Вашего банка зачисление средств может занять до 2-3х дней. Особенно это касается того случая, когда Вы оформляете заявку на получение займа на выходных.
+          .panel.panel-default
+            #headingSeven.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseSeven', aria-expanded='false', aria-controls='collapseSeven')
+                  | Какие документы, подтверждающие доход, я могу предоставить дополнительно?
+                i.ex-plus-icon
+            #collapseSeven.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSeven')
+              .panel-body
+                | Никаких дополнительных документов, подтверждающих наличие/отсутствие дохода, не требуется.
+          .panel.panel-default
+            #headingEight.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseEight', aria-expanded='false', aria-controls='collapseEight')
+                  | Могу ли я подать заявку на еще один займ, если предыдущий займ не погашен?
+                i.ex-plus-icon
+            #collapseEight.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingEight')
+              .panel-body
+                | Чтобы подать заявку еще на один займ, Вы должны погасить предыдущий. Данное условие необходимо для проверки статуса Вашей платежеспособности.
+          .panel.panel-default
+            #headingNine.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseNine', aria-expanded='false', aria-controls='collapseNine')
+                  | Я новый клиент. Сколько я могу занять?
+                i.ex-plus-icon
+            #collapseNine.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingNine')
+              .panel-body
+                | Максимальная сумма займа для новых клиентов составляет 10000 рублей при 4,5% в месяц. Для ответственных клиентов, пользующихся нашими услугами более одного раза, сумма возрастает: во второй раз - до 20000 руб, с третьего раза - до 100000 руб.
+          .panel.panel-default
+            #headingTen.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseTen', aria-expanded='false', aria-controls='collapseTen')
+                  | Я пенсионер/студент, могу ли я оформить у Вас заявку?
+                i.ex-plus-icon
+            #collapseTen.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTen')
+              .panel-body
+                | Максимальная сумма займа для новых клиентов составляет 10000 рублей при 4,5% в месяц. Для ответственных клиентов, пользующихся нашими услугами более одного раза, сумма возрастает: во второй раз - до 20000 руб, с третьего раза - до 100000 руб.
+          .panel.panel-default
+            #headingEleven.panel-heading(role='tab')
+              h4.panel-title
+                a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseEleven', aria-expanded='false', aria-controls='collapseEleven')
+                  | Как я узнаю какое решение было вынесено по моей заявке?
+                i.ex-plus-icon
+            #collapseEleven.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingEleven')
+              .panel-body
+                | После вынесения решения по Вашей заявке Вам будет осуществлен звонок или выслано соответствующее письмо на Вашу электронную почту.
+        footer.text-center
+          h3 Не нашли ответ на свой вопрос?
+            a(href='', data-toggle='modal', data-target='#helpModal')
+              p Задайте свой вопрос через FAQ на нашем сервисе и наш специалист свяжется с вами
+            .col-md-8.col-md-offset-2.text-center
+              a(href='/form')
+                button.ex-main-btn получить займ
+

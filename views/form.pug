@@ -1,0 +1,47 @@
+extends layout
+
+block append header
+  link(rel='stylesheet', href='/stylesheets/form.css')
+
+block content
+  .container.ex-form
+    h1#to_scroll.text-center Как получить деньги?
+    .row
+      .col-md-12.col-md-offset-0.col-xs-10.col-xs-offset-1
+        .row
+          .col-sm-10.col-sm-offset-1
+            .ex-indicator-scope.ex-on-second-step.ex-on-last-step.nav.nav-tabs(role="tablist")
+              figure.ex-first-step
+                p
+                  br
+              figure.ex-second-step
+                div
+                  span
+                p
+                  | Личные данные
+                  br
+                  |  (всего 3 шага)
+              figure.ex-last-step
+                p(style="width: 105px; left: -130%;")
+        .row.tab-content
+          form#anketa.form-horizontal.form-label.form-css-label(action="/lk" method="post" autocomplete="off" novalidate="")
+            input#display(type="hidden" name="display" value="0")
+            input(type="hidden" name="referer" value="")
+            input(type="hidden" name="id" value="")
+            input(type="hidden" name="step" value="1")
+            input(type="hidden" name="ad_id" value="")
+            input#amount(type="hidden" name="amount" value="")
+            input#period(type="hidden" name="period" value="")
+            input#fingerprint(type="hidden" name="fingerprint" value="")
+            .row.tab-content
+              #firstTabContent.tab-pane.fade.in.active.col-xs-12(role="tabpanel")
+                include form1
+            .row.tab-content
+              #secondTabContent.tab-pane.col-xs-12(role="tabpanel")
+                include form2
+            .row.tab-content
+              #lastTabContent.tab-pane.col-xs-12(role="tabpanel")
+                include form3 
+
+            block append foot
+              //script(src='/javascripts/for_index.js')
