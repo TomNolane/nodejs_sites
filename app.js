@@ -24,11 +24,13 @@ module.exports = async (value) =>
         })
     })
 
+/*
 const ngrok = require('ngrok');
 (async function() {
   const url = await ngrok.connect(3000);
   console.log(url);
 })();
+*/
 
 var app = express();
 app.use(compression());
