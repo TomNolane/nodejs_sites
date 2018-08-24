@@ -17,20 +17,12 @@ var moneyRouter = require('./routes/money');
 var rulesRouter = require('./routes/rules');
 
 module.exports = async (value) => 
-    new Promise((resolve, reject) => {
-        request(value, (error, response, data) => {
-            if(error) reject(error)
-            else resolve(data)
-        })
+new Promise((resolve, reject) => {
+    request(value, (error, response, data) => {
+        if(error) reject(error)
+        else resolve(data)
     })
-
-/*
-const ngrok = require('ngrok');
-(async function() {
-  const url = await ngrok.connect(3000);
-  console.log(url);
-})();
-*/
+}) 
 
 var app = express();
 app.use(compression());
