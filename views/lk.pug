@@ -1,0 +1,238 @@
+extends layout
+
+block content    
+    .row.container3
+    .col-md-12
+        h2.text-center.hh Вам доступен займ в следующих организациях:
+        .row
+        br
+        .row
+            .col-md-12
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    if aff_sub2 === undefined
+                        - aff_sub2 = aff_sub1
+                    if aff_sub3 === undefined
+                        - aff_sub3 = aff_sub1
+                    if aff_sub4 === undefined
+                        - aff_sub4 = aff_sub1
+                        
+                    - var url = '?aff_sub1='+aff_sub1+'&aff_sub2='+aff_sub2+'&aff_sub3='+aff_sub3+'&aff_sub4='+aff_sub4;
+                    a(href='https://pxl.leads.su/click/72c0cb6b29fa68ebdaa08ecc50e1cbfa'+url, onclick="markTarget('pixel_result', 'Веббанкир', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/webbankir.png', alt='Веббанкир')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 15 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 1.20%
+                    tr
+                        td Возраст
+                        td.wordwrap от 19 до 100
+                a(href='https://pxl.leads.su/click/72c0cb6b29fa68ebdaa08ecc50e1cbfa'+url, onclick="markTarget('pixel_result', 'Веббанкир', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/4913c6dba4e609f7e6e739d29342349b'+url, onclick="markTarget('pixel_result', 'Займер', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/zaymer.png', alt='Займер')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 30 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 0.63%
+                    tr
+                        td Возраст
+                        td.wordwrap от 18 до 75
+                a(href='https://pxl.leads.su/click/4913c6dba4e609f7e6e739d29342349b'+url, onclick="markTarget('pixel_result', 'Займер', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/2331e12449263348acdcf12ec640c0cd'+url, onclick="markTarget('pixel_result', 'Joymoney', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/joymoney.png', alt='Joymoney')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 8 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 2.17%
+                    tr
+                        td Возраст
+                        td.wordwrap от 23 до 60
+                a(href='https://pxl.leads.su/click/2331e12449263348acdcf12ec640c0cd'+url, onclick="markTarget('pixel_result', 'Joymoney', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/a58b70a771d2e0b44716aaf4fe8c4946'+url, onclick="markTarget('pixel_result', 'Konga', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/konga.png', alt='Konga')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 20 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 1.80%
+                    tr
+                        td Возраст
+                        td.wordwrap от 21 до 100
+                a(href='https://pxl.leads.su/click/a58b70a771d2e0b44716aaf4fe8c4946'+url, onclick="markTarget('pixel_result', 'Konga', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+        .row
+            .col-md-12
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/808b2dfdcd439ebcb3aa4befe32b3059'+url, onclick="markTarget('pixel_result', 'Moneyman', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/moneyman.png', alt='Moneyman')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 10 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 0.00%
+                    tr
+                        td Возраст
+                        td.wordwrap от 18 до 72
+                a(href='https://pxl.leads.su/click/808b2dfdcd439ebcb3aa4befe32b3059'+url, onclick="markTarget('pixel_result', 'Moneyman', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/88d3fd35f25eb24722b44e141c5a5725'+url, onclick="markTarget('pixel_result', 'ezaem', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/ezaem.png', alt='ezaem')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 15 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 0.00%
+                    tr
+                        td Возраст
+                        td.wordwrap от 18 до 90
+                a(href='https://pxl.leads.su/click/88d3fd35f25eb24722b44e141c5a5725'+url, onclick="markTarget('pixel_result', 'ezaem', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://pxl.leads.su/click/d4dcbeef2c1cfec3b87f805417804dac'+url, onclick="markTarget('pixel_result', 'GreenMoney', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/greenmoney.png', alt='GreenMoney')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 24 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 2.24%
+                    tr
+                        td Возраст
+                        td.wordwrap от 20 до 86
+                a(href='https://pxl.leads.su/click/d4dcbeef2c1cfec3b87f805417804dac'+url, onclick="markTarget('pixel_result', 'GreenMoney', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+            .col-md-3.offers
+                br
+                figure.text-center.hh1
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                span.fa.fa-star.ex-checked-stars
+                .ex-wrapper
+                    br
+                    a(href='https://kviku.ru/cards/?promo=nb&utm_source=zaimhome', onclick="markTarget('pixel_result', 'kviku', '2809581')", target='_blank')
+                    img.lk-img.img-responsive(src='/images/offers/kviku.png', alt='kviku')
+                table
+                    tbody
+                    tr
+                        td.wordwrap Макс. сумма:
+                        td.wordwrap
+                        | 300 000
+                        i
+                    tr
+                        td.wordwrap Основная ставка
+                        td.wordwrap 0.00%
+                    tr
+                        td Возраст
+                        td.wordwrap от 18 до 65
+                a(href='https://kviku.ru/cards/?promo=nb&utm_source=zaimhome', onclick="markTarget('pixel_result', 'kviku', '2809581')", target='_blank')
+                    button.ex-main-btn(type='button') Получить деньги
+                br
+        .row
+            .col-md-12

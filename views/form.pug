@@ -1,7 +1,12 @@
 extends layout
 
 block append header
+  if referer === undefined
+    - referer = 'zaimhome.tk'; 
+
   link(rel='stylesheet', href='/stylesheets/form.css')
+  script.
+    var referer="#{referer}";
 
 block content
   .container.ex-form
@@ -26,12 +31,12 @@ block content
         .row.tab-content
           form#anketa.form-horizontal.form-label.form-css-label(action="/lk" method="post" autocomplete="off" novalidate="")
             input#display(type="hidden" name="display" value="0")
-            input(type="hidden" name="referer" value="")
+            input(type="hidden" name="referer" value=referer)
             input(type="hidden" name="id" value="")
             input(type="hidden" name="step" value="1")
             input(type="hidden" name="ad_id" value="")
-            input#amount(type="hidden" name="amount" value="")
-            input#period(type="hidden" name="period" value="")
+            input#amount(type="hidden" name="amount" value=amount)
+            input#period(type="hidden" name="period" value=period)
             input#fingerprint(type="hidden" name="fingerprint" value="")
             .row.tab-content
               #firstTabContent.tab-pane.fade.in.active.col-xs-12(role="tabpanel")
@@ -41,7 +46,4 @@ block content
                 include form2
             .row.tab-content
               #lastTabContent.tab-pane.col-xs-12(role="tabpanel")
-                include form3 
-
-            block append foot
-              //script(src='/javascripts/for_index.js')
+                include form3

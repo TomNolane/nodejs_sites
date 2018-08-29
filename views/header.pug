@@ -1,1 +1,36 @@
 title=title
+
+if amount !== undefined
+    - amount = amount;
+else 
+    - amount = 20000;
+
+script.
+    var from=15, px=63.974, amount = #{amount};
+
+    switch(amount)
+    {
+        case 1000 : from = 0; break;
+        case 2000 : from = 1; break;
+        case 3000 : from = 2; break;
+        case 4000 : from = 3; break;
+        case 5000 : from = 4; break;
+        case 6000 : from = 5; break;
+        case 7000 : from = 6; break;
+        case 8000 : from = 7; break;
+        case 9000 : from = 8; break;
+        case 10000 : from = 9; break;
+        case 11000 : from = 10; break;
+        case 12000 : from = 11; break;
+        case 13000 : from = 12; break;
+        case 14000 : from = 13; break;
+        case 15000 : from = 14; break;
+        case 20000 : from = 15; break;
+        case 25000 : from = 16; break;
+        case 30000 : from = 17; break;
+        case 40000 : from = 18; break;
+        case 50000 : from = 19; break;
+        case 80000 : from = 20; break;
+        case 100000 : from = 21; break;
+        default: from = 15;
+    } 

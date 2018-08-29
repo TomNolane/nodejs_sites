@@ -18,12 +18,12 @@ block content
                           p#ex-slider-val
                           i
                           input#rangeSlider(type='text', name='rangeSlider')
-                          input#amount(type='hidden', name='amount', value='20000')
-                          input#period(type='hidden', name='period', value='21')
-                          input#form_slrd(type='hidden', name='form_slrd', value='15')
+                          input#amount(type='hidden', name='amount', value= amount) 
+                          input#period(type='hidden', name='period', value= period)
+                          input#form_slrd(type='hidden', name='form_slrd', value= form_slrd)
                           input#fingerprint(type='hidden', name='fingerprint', value='')
-                          input#ip(type='hidden', name='ip', value='178.19.251.137')
-                          input(type='hidden', name='referer', value='')
+                          input#ip(type='hidden', name='ip', value=ip)
+                          input(type='hidden', name='referer', value=referer)
                         .ex-slider-info
                           span 1 тыс.
                           span 100 тыс.
@@ -71,5 +71,4 @@ block content
       p Перевод поступает любым удобным способом.
 
 block append foot
-  //script(src='/javascripts/for_index.js')
   script(src='/javascripts/index.js')

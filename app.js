@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
+var bodyParser = require('body-parser'); 
+var cors = require('cors');
 
 var indexRouter = require('./routes/index'); 
 var aboutRouter = require('./routes/about');
@@ -15,6 +17,7 @@ var ofertaRouter = require('./routes/oferta');
 var formRouter = require('./routes/form');
 var moneyRouter = require('./routes/money');
 var rulesRouter = require('./routes/rules');
+var lkRouter = require('./routes/lk');
 
 module.exports = async (value) => 
 new Promise((resolve, reject) => {
@@ -27,6 +30,7 @@ new Promise((resolve, reject) => {
 var app = express();
 app.use(compression());
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -36,6 +40,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 app.use('/', indexRouter); 
 app.use('/about', aboutRouter);
@@ -47,6 +55,9 @@ app.use('/oferta', ofertaRouter);
 app.use('/form', formRouter);
 app.use('/money', moneyRouter);
 app.use('/rules', rulesRouter);
+app.use('/lk', lkRouter);
+
+app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
