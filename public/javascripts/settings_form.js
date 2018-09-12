@@ -83,7 +83,7 @@ function error(msg, elem) {
 function send_form(send, href) {
     if (typeof send == 'undefined') send = '';
     else send = 'send=true&';
-    $.getJSON('https://zaimhome.ru/addnew/?' + send + $('form#anketa').serialize()).done(function (data) {
+    $.getJSON('https://127.0.0.1/addnew/?' + send + $('form#anketa').serialize()).done(function (data) {
         if (typeof data.result != 'undefined' && data.result == 'OK') {
             if (typeof data.id != 'undefined') $('form#anketa input[name="id"]').val(data.id);
             if (typeof data.redirect != 'undefined' && data.redirect) {
@@ -461,13 +461,14 @@ $(document).ready(function () {
     $('#phone').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ru/validate/phone/',
+            url: 'https://127.0.0.1/validate/phone/',
             data: 'phone=' + $('#phone').val(),
             success: function (data) {
                 validator = JSON.parse(data);
+                console.log(validator);
                 if (validator.status) {
                     $('#phonestatus').removeClass('glyphicon-remove').removeClass('glyphicon-ok');
-                    $('#phonestatus').html('<img src="https://zaimhome.ru/templates/common/img/mobile/' + validator.operator + '.png" width="24px" />');
+                    $('#phonestatus').html('<img src="common/mobile/' + validator.operator + '.png" width="24px" />');
                     $('#phonestatus').parent().parent().removeClass('ex-error').addClass('ex-success');
                     if (validator.operator == 'undefined') {
                         $('#phonestatus').html('');
@@ -478,19 +479,20 @@ $(document).ready(function () {
                     $('#phonestatus').removeClass('glyphicon-ok').addClass('glyphicon-remove');
                     $('#phonestatus').parent().parent().removeClass('ex-success').addClass('ex-error');
                 }
+                console.log(data);
             }
         });
     });
     $('#work_phone').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ru/validate/phone/',
+            url: 'https://127.0.0.1/validate/phone/',
             data: 'phone=' + $('#work_phone').val(),
             success: function (data) {
                 validator = JSON.parse(data);
                 if (validator.status) {
                     $('#work_phonestatus').removeClass('glyphicon-remove').removeClass('glyphicon-ok');
-                    $('#work_phonestatus').html('<img src="https://zaimhome.ru/templates/common/img/mobile/' + validator.operator + '.png" width="24px" />');
+                    $('#work_phonestatus').html('<img src="common/img/mobile/' + validator.operator + '.png" width="24px" />');
                     $('#work_phonestatus').parent().parent().removeClass('ex-error').addClass('ex-success');
                     if (validator.operator == 'undefined') {
                         $('#work_phonestatus').html('');
@@ -507,7 +509,7 @@ $(document).ready(function () {
     $('#passport_code').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ru/validate/passport_code/',
+            url: 'https://127.0.0.1/validate/passport_code/',
             data: 'passport_code=' + $('#passport_code').val(),
             success: function (data) {
                 validator = JSON.parse(data);

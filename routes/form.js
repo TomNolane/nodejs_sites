@@ -1,13 +1,11 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router(); 
 
 /* GET home page. */
 router.get('/', function(req, res, next) 
 {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+  res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
   var amount = 20000, period=21, percent = 95, referer = req.headers.referer;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   if(req.query.amount)
@@ -58,9 +56,7 @@ router.get('/', function(req, res, next)
 router.post('/', function(req, res, next) 
 {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+  res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
   var amount = 20000, period=21, percent = 95, referer = req.headers.referer;
   var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   if(req.body.amount)
