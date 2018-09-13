@@ -41,6 +41,7 @@ router.post('/phone', function(req, res, next)
                 var body = JSON.parse(Buffer.concat(bodyChunks));
                 var operator = 'undefined';
                 var status = 0;
+                var region_id = 0;
 
                 if(body.operator_id)
                 {
@@ -54,7 +55,12 @@ router.post('/phone', function(req, res, next)
                     }
                 }
 
-                res.send(JSON.stringify({'status':status,'operator':operator}));
+                if(body.region_id)
+                {
+                    region_id = body.region_id;
+                }
+
+                res.send(JSON.stringify({'status':status,'operator':operator,'region_id':region_id}));
                 // console.log('Operator: ' + body.operator);
                 // console.log('operator_id: ' + body.operator_id);
                 // console.log('region: ' + body.region);

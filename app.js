@@ -52,7 +52,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
  
-app.use(cors()); 
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 app.use('/', indexRouter); 
 app.use('/about', aboutRouter);
 app.use('/agreement', agreementRouter);
