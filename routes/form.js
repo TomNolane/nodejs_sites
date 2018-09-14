@@ -1,6 +1,7 @@
 var express = require('express');
-var router = express.Router(); 
-var maxmind = require('maxmind');
+var router = express.Router();
+var pug = require('pug');
+var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) 
@@ -41,34 +42,38 @@ router.get('/', function(req, res, next)
   else 
     percent = 65;
 
-  maxmind.open('./GeoLite2-City_20180911/GeoLite2-City.mmdb', (err, cityLookup) => { 
-    /*
-    var city = cityLookup.get('178.250.245.201');
-    console.log(city);
+  locals = {
+    title: 'Подача Заявки на Получение Займа Онлайн | Сервис Zaimhome',
+    description: 'Zaimhome - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории. Только у нас лучшие кредитные предложения!',
+    amount: amount,
+    period: period,
+    referer: referer,
+    percent: percent,
+    ip: ip,
+  };
 
-    if(city === null)
-      city = 'Владимир';
-    else
-    {
-      var t =  JSON.parse(JSON.stringify(city));
-      console.log(t.city.names.ru);
-      city = t.city.names.ru;
-    }
+  options = {
+    basedir: path.join(__dirname, 'views'),
+    debug: false,
+    compileDebug: false,
+    cache: true,
+    doctype: 'html'
+  };
 
-    console.log(city);
-    */
-    res.render('form', 
-    { 
-        title: 'Подача Заявки на Получение Займа Онлайн | Сервис Zaimhome',
-        description: 'Zaimhome - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории. Только у нас лучшие кредитные предложения!',
-        amount: amount,
-        period:period,
-        referer:referer,
-        percent:percent,
-        ip:ip,
-        //city:city
-    });
-  });
+  var fn = pug.compileFile('views/form.pug', options);
+  var html = fn(locals);
+  res.send(html);
+  
+  // res.render('form', {
+    // title: 'Подача Заявки на Получение Займа Онлайн | Сервис Zaimhome',
+    // description: 'Zaimhome - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории. Только у нас лучшие кредитные предложения!',
+    // amount: amount,
+    // period: period,
+    // referer: referer,
+    // percent: percent,
+    // ip: ip,
+  //   //city:city
+  // }); 
 });
 
 router.post('/', function(req, res, next) 

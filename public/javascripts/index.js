@@ -47,48 +47,48 @@ try {
     var slider = $('#rangeSlider').data('ionRangeSlider');
     var slider_plus = true;
     var n = 10;
-    var slider_init = setInterval(function () {
-        if (slider_plus) {
-            n++;
-        } else {
-            n--;
-        }
-        if (n == 21 && n != from) {
-            slider_plus = false;
-        } else if (n == from && slider_plus == false) {
-            clearInterval(slider_init);
-        } else if (n == 21 && n == from) {
-            clearInterval(slider_init);
-        }
-        slider.update({
-            from: n
-        });
-        if (n <= 9) {
-            $('#period').val('7');
-            $('#period2').val('От 61 до 130 дней');
-            $('#percent').val('95');
-        } else if (n <= 14 && n > 9) {
-            $('#period').val('14');
-            $('#period2').val('От 61 до 130 дней');
-            $('#percent').val('95');
-        } else if (n <= 15 && n > 14) {
-            $('#period').val('21');
-            $('#period2').val('От 61 до 130 дней');
-            $('#percent').val('95');
-        } else if (n <= 17 && n > 15) {
-            $('#period').val('21');
-            $('#period2').val('От 61 до 130 дней');
-            $('#percent').val('85');
-        } else if (n <= 19 && n > 17) {
-            $('#period').val('30');
-            $('#period2').val('От 130 до 250 дней');
-            $('#percent').val('77');
-        } else if (n > 19) {
-            $('#period').val('30');
-            $('#period2').val('От 250 до 365 дней');
-            $('#percent').val('65');
-        }
-        $('#amount').val(slider.result.from_value);
-        $("#form_slrd").val(slider.result.from);
-    }, 50); 
+    // var slider_init = setInterval(function () {
+    //     if (slider_plus) {
+    //         n++;
+    //     } else {
+    //         n--;
+    //     }
+    //     if (n == 21 && n != from) {
+    //         slider_plus = false;
+    //     } else if (n == from && slider_plus == false) {
+    //         clearInterval(slider_init);
+    //     } else if (n == 21 && n == from) {
+    //         clearInterval(slider_init);
+    //     }
+    //     slider.update({
+    //         from: n
+    //     });
+    //     if (n <= 9) {
+    //         $('#period').val('7');
+    //         $('#period2').val('От 61 до 130 дней');
+    //         $('#percent').val('95');
+    //     } else if (n <= 14 && n > 9) {
+    //         $('#period').val('14');
+    //         $('#period2').val('От 61 до 130 дней');
+    //         $('#percent').val('95');
+    //     } else if (n <= 15 && n > 14) {
+    //         $('#period').val('21');
+    //         $('#period2').val('От 61 до 130 дней');
+    //         $('#percent').val('95');
+    //     } else if (n <= 17 && n > 15) {
+    //         $('#period').val('21');
+    //         $('#period2').val('От 61 до 130 дней');
+    //         $('#percent').val('85');
+    //     } else if (n <= 19 && n > 17) {
+    //         $('#period').val('30');
+    //         $('#period2').val('От 130 до 250 дней');
+    //         $('#percent').val('77');
+    //     } else if (n > 19) {
+    //         $('#period').val('30');
+    //         $('#period2').val('От 250 до 365 дней');
+    //         $('#percent').val('65');
+    //     }
+    //     $('#amount').val(slider.result.from_value);
+    //     $("#form_slrd").val(slider.result.from);
+    // }, 50); 
 } catch (e) {}

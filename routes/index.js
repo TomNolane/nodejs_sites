@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var pug = require('pug');
+var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) 
@@ -34,17 +36,38 @@ router.get('/', function(req, res, next)
     percent = 77; 
   else 
     percent = 65;
-
-  res.render('index', 
-  { 
-    title: 'Срочные займы круглосуточно без проверок Онлайн', 
+  
+  locals = {
+    title: 'Срочные займы круглосуточно без проверок Онлайн',
     description: 'Zaimhome - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории. Только у нас лучшие кредитные предложения!',
     amount: _amount,
-    period:period,
-    referer:referer,
-    percent:percent,
-    ip:ip
-   });
+    period: period,
+    referer: referer,
+    percent: percent,
+    ip: ip
+  };
+
+  options = {
+   basedir: path.join(__dirname, 'views'),
+   debug: false,
+   compileDebug: false,
+   cache: true,
+   doctype: 'html'
+ };
+  
+  var fn = pug.compileFile('views/index.pug', options);
+  var html = fn(locals); 
+  res.send(html);
+  // res.render('index', 
+  // { 
+  //   title: 'Срочные займы круглосуточно без проверок Онлайн', 
+  //   description: 'Zaimhome - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории. Только у нас лучшие кредитные предложения!',
+  //   amount: _amount,
+  //   period:period,
+  //   referer:referer,
+  //   percent:percent,
+  //   ip:ip
+  //  });
 });
 
 module.exports = router;
