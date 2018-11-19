@@ -10201,4 +10201,11 @@ input:valid:not(:placeholder-shown) {
 
 ul.list-inline.text-center>li>a {
   font-size: 12px
-} 
+}
+#alert,
+#info,
+#delete,
+#notification,
+#massage_row {
+    display: none;
+}

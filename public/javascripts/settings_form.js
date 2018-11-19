@@ -461,7 +461,7 @@ $(document).ready(function () {
     $('#phone').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ml/validate/phone/',
+            url: '/validate/phone/',
             data: 'phone=' + $('#phone').val(),
             success: function (data) {
                 validator = JSON.parse(data);
@@ -488,7 +488,7 @@ $(document).ready(function () {
     $('#work_phone').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ml/validate/phone/',
+            url: '/validate/phone/',
             data: 'phone=' + $('#work_phone').val(),
             success: function (data) {
                 validator = JSON.parse(data);
@@ -511,7 +511,7 @@ $(document).ready(function () {
     $('#passport_code').blur(function () {
         $.ajax({
             type: 'POST',
-            url: 'https://zaimhome.ml/validate/passport_code/',
+            url: '/validate/passport_code/',
             data: 'passport_code=' + $('#passport_code').val(),
             success: function (data) {
                 validator = JSON.parse(data);
